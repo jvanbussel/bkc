@@ -5,23 +5,37 @@
   background: #0252b1;
 }
 
-.menubar {
+.menu-anchor {
   grid-area: 1 / 1;
-  place-self: start center;
-  margin: 1rem 0 0 0;
+  place-self: start start;
+  margin: 1rem 0 0 1rem;
   width: fit-content;
   opacity: 1;
   transform: translateY(0);
   z-index: 10;
 }
 
-.menubar-animated {
-  opacity: 0;
-  transform: translateY(-50px);
-  animation: menubarFadeIn 1s ease-out 2.5s forwards;
+.menu-button.p-button {
+  background: #fff;
+  border-color: #fff;
+  color: #0252b1;
 }
 
-@keyframes menubarFadeIn {
+.menu-button.p-button:hover,
+.menu-button.p-button:focus,
+.menu-button.p-button:active {
+  background: #fff;
+  border-color: #fff;
+  color: #0252b1;
+}
+
+.menu-anchor-animated {
+  opacity: 0;
+  transform: translateY(-50px);
+  animation: menuFadeIn 1s ease-out 2.5s forwards;
+}
+
+@keyframes menuFadeIn {
   from {
     opacity: 0;
     transform: translateY(-50px);
