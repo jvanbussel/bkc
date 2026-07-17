@@ -1,0 +1,44 @@
+<section class="hero">
+  <div class="hero-content">
+    <h1 class="hero-title">Welcome to BKC</h1>
+    <p class="hero-subtitle">
+      A modern Angular application powered by PrimeNG components.
+    </p>
+    <div class="hero-actions">
+      <p-button label="Get Started" severity="primary" size="large" />
+      <p-button label="Learn More" severity="secondary" size="large" [outlined]="true" />
+    </div>
+  </div>
+</section>
+
+<section class="features">
+  <h2 class="features-title">Features</h2>
+  <div class="features-grid">
+    <p-card header="Fast & Modern" subheader="Angular 20">
+      <ng-template #content>
+        <p>Built with the latest Angular framework for maximum performance and developer experience.</p>
+      </ng-template>
+      <ng-template #footer>
+        <p-tag value="Angular 20" severity="info" />
+      </ng-template>
+    </p-card>
+
+    <p-card header="Beautiful UI" subheader="PrimeNG v20">
+      <ng-template #content>
+        <p>Stunning components from PrimeNG with the Aura design system out of the box.</p>
+      </ng-template>
+      <ng-template #footer>
+        <p-tag value="PrimeNG 20" severity="success" />
+      </ng-template>
+    </p-card>
+
+    <p-card header="Type Safe" subheader="TypeScript">
+      <ng-template #content>
+        <p>Fully typed codebase with TypeScript for reliability and maintainability.</p>
+      </ng-template>
+      <ng-template #footer>
+        <p-tag value="TypeScript" severity="warn" />
+      </ng-template>
+    </p-card>
+  </div>
+</section>
