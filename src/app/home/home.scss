@@ -1,15 +1,113 @@
 .wrapper {
   background: #0252b1;
   height: 100vh;
-  display: flex;
-  align-items: center;
-  justify-content: center;
+  display: grid;
+  place-items: center;
   padding: 1rem;
   box-sizing: border-box;
 }
 
 .bkc-image {
-  width: auto;
-  height: 50vh;
+  grid-area: 1 / 1;
+  width: min(80vw, 900px);
+  height: auto;
   display: block;
+  animation-duration: 0.8s;
+  animation-timing-function: ease-out;
+  animation-fill-mode: both;
+}
+
+.animate-top-left {
+  animation-name: slideFromTopLeft;
+}
+
+.animate-top-right {
+  animation-name: slideFromTopRight;
+}
+
+.animate-bottom-left {
+  animation-name: slideFromBottomLeft;
+}
+
+.animate-bottom-right {
+  animation-name: slideFromBottomRight;
+}
+
+.animate-bottom {
+  animation-name: slideFromBottom;
+}
+
+.first {
+  animation-delay: 0s;
+}
+
+.second {
+  animation-delay: 0.5s;
+}
+
+.third {
+  animation-delay: 1s;
+}
+
+.fourth {
+  animation-delay: 1.5s;
+}
+
+.fifth {
+  animation-delay: 2.5s;
+}
+
+@keyframes slideFromTopLeft {
+  from {
+    opacity: 0;
+    transform: translate(-50%, -50%);
+  }
+  to {
+    opacity: 1;
+    transform: translate(0, 0);
+  }
+}
+
+@keyframes slideFromTopRight {
+  from {
+    opacity: 0;
+    transform: translate(50%, -50%);
+  }
+  to {
+    opacity: 1;
+    transform: translate(0, 0);
+  }
+}
+
+@keyframes slideFromBottomLeft {
+  from {
+    opacity: 0;
+    transform: translate(-50%, 50%);
+  }
+  to {
+    opacity: 1;
+    transform: translate(0, 0);
+  }
+}
+
+@keyframes slideFromBottomRight {
+  from {
+    opacity: 0;
+    transform: translate(50%, 50%);
+  }
+  to {
+    opacity: 1;
+    transform: translate(0, 0);
+  }
+}
+
+@keyframes slideFromBottom {
+  from {
+    opacity: 0;
+    transform: translateY(60px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
