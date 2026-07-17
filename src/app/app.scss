@@ -10,9 +10,15 @@
   place-self: start center;
   margin: 1rem 0 0 0;
   width: fit-content;
-  opacity: 0;
-  animation: menubarFadeIn 1s ease-out 2.5s forwards;
+  opacity: 1;
+  transform: translateY(0);
   z-index: 10;
+}
+
+.menubar-animated {
+  opacity: 0;
+  transform: translateY(-50px);
+  animation: menubarFadeIn 1s ease-out 2.5s forwards;
 }
 
 @keyframes menubarFadeIn {
@@ -29,4 +35,5 @@
 .page-content {
   grid-area: 1 / 1;
   min-height: 0;
+  color: #fff;
 }
