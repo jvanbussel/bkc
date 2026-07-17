@@ -1,15 +1,18 @@
 import { Component } from '@angular/core';
-import { RouterOutlet } from '@angular/router';
+import { Router, RouterOutlet } from '@angular/router';
 import { MenuItem } from 'primeng/api';
-import { MenubarModule } from 'primeng/menubar';
+import { ButtonModule } from 'primeng/button';
+import { MenuModule } from 'primeng/menu';
 
 @Component({
   selector: 'app-root',
-  imports: [RouterOutlet, MenubarModule],
+  imports: [RouterOutlet, MenuModule, ButtonModule],
   templateUrl: './app.html',
   styleUrl: './app.scss',
 })
 export class App {
+  constructor(private readonly router: Router) {}
+
   readonly menuItems: MenuItem[] = [
     { label: 'Home', routerLink: '/' },
     { label: 'Kaastips', routerLink: '/kaastips' },
@@ -18,4 +21,9 @@ export class App {
     { label: 'Lid van het kwartaal', routerLink: '/lid-van-het-kwartaal' },
     { label: 'Over', routerLink: '/over' },
   ];
+
+  isHomeRoute(): boolean {
+    const path = this.router.url.split('?')[0].split('#')[0];
+    return path === '' || path === '/';
+  }
 }
