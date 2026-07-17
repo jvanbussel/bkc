@@ -13,8 +13,8 @@ describe('App', () => {
       providers: [
         provideRouter(routes),
         provideAnimationsAsync(),
-        providePrimeNG({ theme: { preset: Aura } })
-      ]
+        providePrimeNG({ theme: { preset: Aura } }),
+      ],
     }).compileComponents();
   });
 

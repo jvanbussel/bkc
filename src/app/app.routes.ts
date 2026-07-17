@@ -3,5 +3,5 @@ import { HomeComponent } from './home/home';
 
 export const routes: Routes = [
   { path: '', component: HomeComponent },
-  { path: '**', redirectTo: '' }
+  { path: '**', redirectTo: '' },
 ];
