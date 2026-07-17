@@ -1,16 +1,23 @@
+:host {
+  display: block;
+  height: 100%;
+  overflow: hidden;
+}
+
 .wrapper {
-  background: #0252b1;
-  height: 100vh;
+  width: 100%;
+  height: 100%;
   display: grid;
   place-items: center;
   padding: 1rem;
   box-sizing: border-box;
+  overflow: hidden;
 }
 
 .bkc-image {
   grid-area: 1 / 1;
-  width: min(80vw, 900px);
-  height: auto;
+  width: auto;
+  height: 80vh;
   display: block;
   animation-duration: 0.8s;
   animation-timing-function: ease-out;
@@ -60,7 +67,7 @@
 @keyframes slideFromTopLeft {
   from {
     opacity: 0;
-    transform: translate(-50%, -50%);
+    transform: translate(-100%, -100%);
   }
   to {
     opacity: 1;
@@ -71,7 +78,7 @@
 @keyframes slideFromTopRight {
   from {
     opacity: 0;
-    transform: translate(50%, -50%);
+    transform: translate(100%, -100%);
   }
   to {
     opacity: 1;
@@ -82,7 +89,7 @@
 @keyframes slideFromBottomLeft {
   from {
     opacity: 0;
-    transform: translate(-50%, 50%);
+    transform: translate(-100%, 100%);
   }
   to {
     opacity: 1;
@@ -93,7 +100,7 @@
 @keyframes slideFromBottomRight {
   from {
     opacity: 0;
-    transform: translate(50%, 50%);
+    transform: translate(100%, 100%);
   }
   to {
     opacity: 1;
