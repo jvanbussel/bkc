@@ -1,17 +1,18 @@
 :host {
-  display: flex;
-  flex-direction: column;
+  display: grid;
   height: 100dvh;
   overflow: hidden;
   background: #0252b1;
 }
 
 .menubar {
+  grid-area: 1 / 1;
+  place-self: start center;
   margin: 1rem 0 0 0;
-  align-self: center;
   width: fit-content;
   opacity: 0;
   animation: menubarFadeIn 1s ease-out 2.5s forwards;
+  z-index: 10;
 }
 
 @keyframes menubarFadeIn {
@@ -26,6 +27,6 @@
 }
 
 .page-content {
-  flex: 1;
+  grid-area: 1 / 1;
   min-height: 0;
 }
