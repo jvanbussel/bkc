@@ -1,11 +1,6 @@
 <main class="page-content" [class.home-route]="isHomeRoute()">
   <div class="menu-anchor" [class.menu-anchor-animated]="isHomeRoute()">
-    <button
-      type="button"
-      class="menu-button"
-      aria-label="Menu"
-      (click)="menu.toggle($event)"
-    >
+    <button type="button" class="menu-button" aria-label="Menu" (click)="menu.toggle($event)">
       <span class="menu-icon" aria-hidden="true"></span>
     </button>
     <p-menu #menu [model]="menuItems" [popup]="true" [appendTo]="'body'" styleClass="menu-popup" />
