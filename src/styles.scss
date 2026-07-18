@@ -1,6 +1,5 @@
 /* Global styles */
 
-
 :root {
   --handwritten-block-font: 'Patrick Hand SC', 'Segoe UI', sans-serif;
   --p-font-family: var(--handwritten-block-font);
@@ -17,4 +16,55 @@ body {
   font-weight: 700;
   text-transform: uppercase;
   letter-spacing: 0.05em;
+}
+
+.kaas-afbeelding {
+  width: 100%;
+  height: 220px;
+  object-fit: cover;
+  border-radius: 0.6rem;
+  margin-bottom: 0.8rem;
+  display: block;
+}
+
+.section {
+  min-height: 100%;
+}
+
+.section-header {
+  margin-bottom: 1rem;
+}
+
+.section-title {
+  margin: 0;
+  font-size: clamp(1.6rem, 3vw, 2.2rem);
+}
+
+.section-subtitle {
+  margin: 0.35rem 0 0;
+  opacity: 0.9;
+}
+
+.tile-card {
+  background: #fff;
+  color: #0252b1;
+  border-radius: 0.9rem;
+  padding: 1rem;
+  box-shadow: 0 8px 20px rgb(0 0 0 / 16%);
+}
+
+.tile-title {
+  margin: 0;
+  font-size: 1.1rem;
+}
+
+.tile-text {
+  margin: 0.6rem 0 0;
+  line-height: 1.45;
+}
+
+.menu-popup {
+  inset-inline-start: auto !important;
+  right: 1.5rem !important;
+  transform-origin: right top !important;
 }

@@ -9,8 +9,7 @@ export const routes: Routes = [
   },
   {
     path: 'kaastalogus',
-    loadComponent: () => import('./coming-soon/coming-soon').then((m) => m.ComingSoonComponent),
-    data: { title: 'Kaastalogus' },
+    loadComponent: () => import('./kaastalogus/kaastalogus').then((m) => m.KaastalogusComponent),
   },
   {
     path: 'agenda',
@@ -19,8 +18,8 @@ export const routes: Routes = [
   },
   {
     path: 'lid-van-het-kwartaal',
-    loadComponent: () => import('./coming-soon/coming-soon').then((m) => m.ComingSoonComponent),
-    data: { title: 'Lid van het kwartaal' },
+    loadComponent: () =>
+      import('./lid-van-het-kwartaal/lid-van-het-kwartaal').then((m) => m.LidVanHetKwartaalComponent),
   },
   {
     path: 'over',

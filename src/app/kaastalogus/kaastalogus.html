@@ -1,0 +1,16 @@
+<section class="section">
+  <header class="section-header">
+    <h1 class="section-title">Kaastalogus</h1>
+    <p class="section-subtitle">Ontdek onze favoriete kazen.</p>
+  </header>
+
+  <div class="kaas-grid">
+    @for (kaas of kazen; track kaas.naam) {
+      <article class="tile-card">
+        <img [src]="kaas.afbeelding" [alt]="kaas.naam" class="kaas-afbeelding" />
+        <h2 class="tile-title">{{ kaas.naam }}</h2>
+        <p class="tile-text">{{ kaas.beschrijving }}</p>
+      </article>
+    }
+  </div>
+</section>
