@@ -7,9 +7,9 @@
   >
     <span class="menu-icon" aria-hidden="true"></span>
   </button>
-  <p-menu #menu [model]="menuItems" [popup]="true" [appendTo]="'body'" />
+  <p-menu #menu [model]="menuItems" [popup]="true" [appendTo]="'body'" styleClass="menu-popup" />
 </div>
 
-<main class="page-content">
+<main class="page-content" [class.home-route]="isHomeRoute()">
   <router-outlet />
 </main>

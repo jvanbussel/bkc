@@ -9,8 +9,7 @@ export const routes: Routes = [
   },
   {
     path: 'kaastalogus',
-    loadComponent: () => import('./coming-soon/coming-soon').then((m) => m.ComingSoonComponent),
-    data: { title: 'Kaastalogus' },
+    loadComponent: () => import('./kaastalogus/kaastalogus').then((m) => m.KaastalogusComponent),
   },
   {
     path: 'agenda',

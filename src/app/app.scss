@@ -7,8 +7,8 @@
 
 .menu-anchor {
   grid-area: 1 / 1;
-  place-self: start start;
-  margin: 1rem 0 0 1rem;
+  place-self: start end;
+  margin: 1.5rem 1.5rem 0 0;
   width: fit-content;
   opacity: 1;
   transform: translateY(0);
@@ -87,4 +87,5 @@
   grid-area: 1 / 1;
   min-height: 0;
   color: #fff;
+  margin: 1.5rem;
 }
