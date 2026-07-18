@@ -5,12 +5,10 @@
 }
 
 .wrapper {
-  --menu-offset: 56px;
   width: 100%;
-  height: calc(100% - var(--menu-offset));
+  height: 100%;
   display: grid;
   place-items: center;
-  margin-top: var(--menu-offset);
   box-sizing: border-box;
   overflow: visible;
 }
