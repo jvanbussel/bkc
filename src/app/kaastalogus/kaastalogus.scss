@@ -3,45 +3,10 @@
   min-height: 100%;
 }
 
-.kaastalogus {
-  min-height: 100%;
-}
-
-.kaastalogus-header {
-  margin-bottom: 1rem;
-}
-
-.kaastalogus-header h1 {
-  margin: 0;
-  font-size: clamp(1.6rem, 3vw, 2.2rem);
-}
-
-.kaastalogus-header p {
-  margin: 0.35rem 0 0;
-  opacity: 0.9;
-}
-
 .kaas-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
   gap: 1rem;
 }
 
-.kaas-tegel {
-  background: #fff;
-  color: #0252b1;
-  border-radius: 0.9rem;
-  padding: 1rem;
-  box-shadow: 0 8px 20px rgb(0 0 0 / 16%);
-}
-
-.kaas-tegel h2 {
-  margin: 0;
-  font-size: 1.1rem;
-}
-
-.kaas-tegel p {
-  margin: 0.6rem 0 0;
-  line-height: 1.45;
-}
 
