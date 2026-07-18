@@ -6,9 +6,9 @@
 }
 
 .menu-anchor {
-  grid-area: 1 / 1;
-  place-self: start end;
-  margin: 1.5rem 1.5rem 0 0;
+  position: absolute;
+  top: 1.5rem;
+  right: 1.5rem;
   width: fit-content;
   opacity: 1;
   transform: translateY(0);
@@ -72,6 +72,11 @@
   animation: menuFadeIn 1s ease-out 2.5s forwards;
 }
 
+.menu-popup {
+  inset-inline-start: unset;
+  right: 1rem;
+}
+
 @keyframes menuFadeIn {
   from {
     opacity: 0;
@@ -90,6 +95,7 @@
   padding: 1.5rem;
   overflow: auto;
   box-sizing: border-box;
+  position: relative;
 }
 
 .page-content.home-route {

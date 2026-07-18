@@ -1,0 +1,33 @@
+:host {
+  display: block;
+  min-height: 100%;
+}
+
+.lid-van-het-kwartaal h1 {
+  margin: 0 0 1rem;
+  font-size: clamp(1.6rem, 3vw, 2.2rem);
+}
+
+.profiel-tegel {
+  background: #fff;
+  color: #0252b1;
+  border-radius: 0.9rem;
+  padding: 1rem;
+  box-shadow: 0 8px 20px rgb(0 0 0 / 16%);
+  max-width: 900px;
+}
+
+.profiel-tegel h2 {
+  margin: 0;
+}
+
+.kroon {
+  font-size: 1.2em;
+  margin-left: 0.25em;
+}
+
+.profiel-tegel p {
+  margin: 0.75rem 0 0;
+  line-height: 1.45;
+}
+

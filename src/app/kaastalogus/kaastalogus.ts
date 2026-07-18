@@ -11,6 +11,7 @@ type Kaas = {
   standalone: true,
   templateUrl: './kaastalogus.html',
   styleUrl: './kaastalogus.scss',
+  imports: [],
 })
 export class KaastalogusComponent {
   readonly kazen: Kaas[] = [
@@ -48,7 +49,7 @@ export class KaastalogusComponent {
       naam: "Bleu d'Auvergne",
       beschrijving:
         'Franse blauwschimmelkaas van koemelk met een romig karakter, aardse tonen en milde pit.',
-      afbeelding: "assets/kaastalogus/Bleu-d-Auvergne.png",
+      afbeelding: 'assets/kaastalogus/Bleu-d-Auvergne.png',
     },
   ];
 }
