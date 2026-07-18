@@ -16,17 +16,56 @@
 }
 
 .menu-button.p-button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 3rem;
+  height: 3rem;
+  padding: 0;
   background: #fff;
   border-color: #fff;
   color: #0252b1;
 }
 
-.menu-button.p-button:hover,
-.menu-button.p-button:focus,
-.menu-button.p-button:active {
+.menu-button {
+  border: 1px solid #fff;
+  border-radius: 0.5rem;
+  cursor: pointer;
+}
+
+.menu-button:hover,
+.menu-button:focus,
+.menu-button:active {
   background: #fff;
   border-color: #fff;
   color: #0252b1;
+}
+
+.menu-icon {
+  position: relative;
+  width: 1.1rem;
+  height: 0.125rem;
+  background: #0252b1;
+  border-radius: 999px;
+}
+
+.menu-icon::before,
+.menu-icon::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  width: 1.1rem;
+  height: 0.125rem;
+  background: #0252b1;
+  border-radius: 999px;
+}
+
+.menu-icon::before {
+  top: -0.35rem;
+}
+
+.menu-icon::after {
+  top: 0.35rem;
 }
 
 .menu-anchor-animated {
