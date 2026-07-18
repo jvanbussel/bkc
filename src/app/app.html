@@ -1,12 +1,12 @@
 <div class="menu-anchor" [class.menu-anchor-animated]="isHomeRoute()">
   <button
-    pButton
     type="button"
-    icon="pi pi-bars"
     class="menu-button"
     aria-label="Menu"
     (click)="menu.toggle($event)"
-  ></button>
+  >
+    <span class="menu-icon" aria-hidden="true"></span>
+  </button>
   <p-menu #menu [model]="menuItems" [popup]="true" [appendTo]="'body'" />
 </div>
 

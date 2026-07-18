@@ -1,11 +1,8 @@
 import { Component } from '@angular/core';
-import { ButtonModule } from 'primeng/button';
-import { CardModule } from 'primeng/card';
-import { TagModule } from 'primeng/tag';
 
 @Component({
   selector: 'app-home',
-  imports: [ButtonModule, CardModule, TagModule],
+  standalone: true,
   templateUrl: './home.html',
   styleUrl: './home.scss'
 })
