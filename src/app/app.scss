@@ -15,7 +15,7 @@
   z-index: 10;
 }
 
-.menu-button.p-button {
+.menu-button {
   display: inline-flex;
   align-items: center;
   justify-content: center;
@@ -23,14 +23,11 @@
   height: 3rem;
   padding: 0;
   background: #fff;
-  border-color: #fff;
-  color: #0252b1;
-}
-
-.menu-button {
   border: 1px solid #fff;
   border-radius: 0.5rem;
+  color: #0252b1;
   cursor: pointer;
+  box-shadow: 0 4px 12px rgb(0 0 0 / 20%);
 }
 
 .menu-button:hover,
@@ -42,6 +39,7 @@
 }
 
 .menu-icon {
+  display: block;
   position: relative;
   width: 1.1rem;
   height: 0.125rem;
