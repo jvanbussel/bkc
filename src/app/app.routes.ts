@@ -19,12 +19,18 @@ export const routes: Routes = [
   {
     path: 'lid-van-het-kwartaal',
     loadComponent: () =>
-      import('./lid-van-het-kwartaal/lid-van-het-kwartaal').then((m) => m.LidVanHetKwartaalComponent),
+      import('./lid-van-het-kwartaal/lid-van-het-kwartaal').then(
+        (m) => m.LidVanHetKwartaalComponent,
+      ),
   },
   {
     path: 'over',
     loadComponent: () => import('./coming-soon/coming-soon').then((m) => m.ComingSoonComponent),
     data: { title: 'Over' },
+  },
+  {
+    path: 'pixelator',
+    loadComponent: () => import('./pixelator/pixelator').then((m) => m.PixelatorComponent),
   },
   { path: '**', redirectTo: '' },
 ];

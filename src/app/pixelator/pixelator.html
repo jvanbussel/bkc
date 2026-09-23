@@ -1,0 +1,127 @@
+<section class="pixelator-container">
+  <div class="upload-section">
+    <div
+      class="drop-zone"
+      [class.drag-over]="isDragOver"
+      (dragover)="onDragOver($event)"
+      (dragleave)="onDragLeave($event)"
+      (drop)="onDrop($event)"
+    >
+      <input
+        #fileInput
+        type="file"
+        accept="image/*"
+        (change)="onFileSelected($event)"
+        style="display: none"
+      />
+
+      <div class="drop-zone-content">
+        <p class="drop-icon">📁</p>
+        <p class="drop-text">Sleep een afbeelding hier of klik om te selecteren</p>
+        <button class="btn-select" (click)="fileInput.click()">
+          Selecteer afbeelding
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <div *ngIf="originalImage" class="controls-section">
+    <div class="control-group">
+      <label for="outputHeight">Hoogte:</label>
+      <input
+        id="outputHeight"
+        type="range"
+        min="8"
+        max="512"
+        [(ngModel)]="outputHeight"
+      />
+      <input
+        class="height-input"
+        type="number"
+        min="8"
+        max="512"
+        step="1"
+        [(ngModel)]="outputHeight"
+        (blur)="normalizeOutputHeight()"
+        aria-label="Hoogte van de uitvoer in pixels"
+      />
+      <span class="pixel-value">px</span>
+      <span class="aspect-ratio-hint">Breedte schaalt automatisch mee</span>
+    </div>
+
+    <div class="button-group">
+      <button class="btn-primary" (click)="pixelate()">Pixelaten</button>
+      <button class="btn-secondary" (click)="reset()">Opnieuw</button>
+    </div>
+  </div>
+
+  <div *ngIf="originalImage || pixelatedImage" class="canvas-section">
+    <div *ngIf="originalImage" class="canvas-wrapper" [class.result-hidden]="pixelatedImage">
+      <h3>Origineel</h3>
+      <canvas #originalCanvas class="canvas"></canvas>
+    </div>
+
+    <div class="canvas-wrapper" [class.result-hidden]="!pixelatedImage">
+      <h3>Verkleinde afbeelding</h3>
+      <p class="output-size">
+        {{ pixelatedWidth }} × {{ outputHeight }} px
+      </p>
+      <canvas #pixelatedCanvas class="canvas"></canvas>
+      <button class="btn-download" (click)="downloadPixelated()">
+        ⬇ Download
+      </button>
+    </div>
+  </div>
+
+  <div *ngIf="originalImage" class="colors-section">
+    <div class="colors-header">
+      <h3>Kleuren in afbeelding</h3>
+
+      <div class="tolerance-control">
+        <label for="colorTolerance">Kleurafstand (0-50):</label>
+        <input
+          id="colorTolerance"
+          type="range"
+          min="0"
+          max="50"
+          [(ngModel)]="colorTolerance"
+        />
+        <span class="tolerance-value">{{ colorTolerance }}</span>
+      </div>
+
+      <button class="btn-primary" (click)="extractColors()">
+        🎨 Kleuren opslaan
+      </button>
+      <button
+        *ngIf="extractedColors.length > 0"
+        class="btn-secondary"
+        (click)="downloadColorsAsJSON()"
+      >
+        ⬇ Download als JSON
+      </button>
+    </div>
+
+    <p *ngIf="extractedColors.length > 0" class="colors-count">
+      {{ extractedColors.length }} {{ extractedColors.length === 1 ? 'kleur' : 'kleuren' }} gevonden
+    </p>
+
+    <div *ngIf="extractedColors.length > 0" class="colors-palette">
+      <div
+        *ngFor="let color of extractedColors"
+        class="color-item"
+        (click)="copyToClipboard(color)"
+      >
+        <div class="color-preview" [style.backgroundColor]="color"></div>
+        <div class="color-info">
+          <span class="color-hex">{{ color }}</span>
+          <span class="color-frequency">{{ colorFrequency.get(color) }} pixels</span>
+        </div>
+      </div>
+    </div>
+
+    <div *ngIf="extractedColors.length === 0" class="colors-empty">
+      <p>Klik op "Kleuren opslaan" om alle kleuren in de afbeelding te extraheren</p>
+    </div>
+  </div>
+</section>
+
