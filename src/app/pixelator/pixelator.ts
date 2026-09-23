@@ -64,8 +64,27 @@ export class PixelatorComponent {
       this.originalImage = e.target?.result as string;
       this.pixelatedImage = null;
       this.pixelatedWidth = null;
+
+      // Wait until Angular has rendered the original canvas after the upload.
+      setTimeout(() => this.drawOriginalPreview());
     };
     reader.readAsDataURL(file);
+  }
+
+  private drawOriginalPreview(): void {
+    if (!this.originalImage || !this.originalCanvas) return;
+
+    const img = new Image();
+    img.onload = () => {
+      const canvas = this.originalCanvas.nativeElement;
+      const ctx = canvas.getContext('2d');
+      if (!ctx) return;
+
+      canvas.width = img.width;
+      canvas.height = img.height;
+      ctx.drawImage(img, 0, 0);
+    };
+    img.src = this.originalImage;
   }
 
   pixelate(): void {
@@ -327,6 +346,12 @@ export class PixelatorComponent {
     navigator.clipboard.writeText(color).then(() => {
       alert('Kleur gekopieerd: ' + color);
     });
+  }
+
+  removeColor(color: string, event: MouseEvent): void {
+    event.stopPropagation();
+    this.extractedColors = this.extractedColors.filter((savedColor) => savedColor !== color);
+    this.colorFrequency.delete(color);
   }
 
   downloadColorsAsJSON(): void {
